@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janhavi Mayekar | DevOps & Cloud Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">Janhavi<span>.dev</span></div>
+  <div class="nav-links">
+    <a href="#about" class="active">About</a>
+    <a href="#stack">Tech Stack</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="profile-btn">Hire Me</div>
+</nav>
+
+<header class="hero" id="about">
+  <div class="hero-content">
+    <h1>Janhavi Mayekar</h1>
+    <p class="role-tag">DevOps & Cloud Engineer</p>
+    <p>Building reliable, automated infrastructure with CI/CD pipelines powered by GitHub Actions — from code commit to cloud deployment.</p>
+    <button class="play-btn" id="pipelineBtn">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </svg>
+      CI/CD with GitHub Actions
+    </button>
+  </div>
+  <div class="hero-gradient"></div>
+</header>
+
+<main class="container" id="stack">
+  <section class="video-section">
+    <h2 class="section-title">Technical Stack</h2>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">☁️</span></div>
+        <div class="video-info">
+          <h3>Cloud</h3>
+          <p class="author">Microsoft Azure, Amazon AWS</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">🐳</span></div>
+        <div class="video-info">
+          <h3>Containers</h3>
+          <p class="author">Kubernetes, Docker, Helm</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">🔄</span></div>
+        <div class="video-info">
+          <h3>CI/CD</h3>
+          <p class="author">Azure DevOps, GitHub Actions, Jenkins</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">🏗️</span></div>
+        <div class="video-info">
+          <h3>IaC</h3>
+          <p class="author">Terraform, Ansible</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">📊</span></div>
+        <div class="video-info">
+          <h3>Monitoring</h3>
+          <p class="author">Azure Monitor, Grafana</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">🔒</span></div>
+        <div class="video-info">
+          <h3>Security</h3>
+          <p class="author">SonarQube, Trivy, SonarCloud</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">💻</span></div>
+        <div class="video-info">
+          <h3>Programming</h3>
+          <p class="author">Python, Bash, Git</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="thumbnail"><span class="emoji">🖥️</span></div>
+        <div class="video-info">
+          <h3>OS</h3>
+          <p class="author">Linux, Windows</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <p id="footerText">Janhavi Mayekar — DevOps & Cloud Engineer</p>
+</footer>
+
+<script>
+// Pull live info from the connected Node.js backend
+fetch('/api/about')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('footerText').textContent =
+      `${data.author} — ${data.role} | ${data.pipeline}`;
+  })
+  .catch(() => console.log('Could not load /api/about'));
+</script>
+</body>
+</html>
