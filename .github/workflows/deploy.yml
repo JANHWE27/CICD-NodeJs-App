@@ -21,11 +21,15 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Dockerfile
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/cicd-app:${{ github.sha }} .
+        run: |
+           docker build \
+           -t ${{ secrets.DOCKERHUB_USERNAME }}/cicd-app:${{ github.sha }} \
+           -t ${{ secrets.DOCKERHUB_USERNAME }}/cicd-app:latest .
 
       - name: Push to DockerHub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cicd-app:${{ github.sha }}
-
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/cicd-app:${{ github.sha }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/cicd-app:latest
   deploy-ec2:
     runs-on: ubuntu-latest
     needs: build-and-push
