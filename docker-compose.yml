@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app:
-    image: janhavi2711/cicd-app:latest
+    image: janhavi2711/cicd-app
     container_name: "CICD-app"
 
     ports:
