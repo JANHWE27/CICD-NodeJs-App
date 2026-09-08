@@ -46,4 +46,8 @@ jobs:
             cd /home/ubuntu/CICD-NodeJs-App
 
             docker compose down
+<<<<<<< HEAD
             docker compose up -d --build
+=======
+            docker compose up -d --build
+>>>>>>> 365568c (Add latest Docker image tag)
